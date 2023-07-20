@@ -7,3 +7,4 @@ class Libro(models.Model):
     author=models.CharField(max_length=50)
     pages=models.IntegerField()
     price=models.FloatField()
+    info=models.CharField(max_length=100,null=True,blank=True)
