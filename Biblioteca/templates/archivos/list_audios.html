@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-    Listado de libros
+    Listado de audios
 {% endblock %}
 
 {% block contenido_que_cambia %}
@@ -17,7 +17,7 @@
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Autor: {{libro.author}}</li>
             <li class="list-group-item">Paginas: {{libro.pages}}</li>
-            <li class="list-group-item">Precio: {{libro.price}}</li>
+            <li class="list-group-item">Precio: {{libro.price}} $</li>
             </ul>
             <div class="card-body">
             <a href="#" class="card-link">Card link</a>
@@ -27,5 +27,5 @@
         <h3> </h3>
 
     {% endfor %}
-
+   
 {% endblock %}

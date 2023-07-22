@@ -6,6 +6,3 @@ from libros.models import Libro
 @admin.register(Libro)
 class Libro_admin(admin.ModelAdmin):
     list_display=["name","author","pages","price","info"]
-    def __str__(self):
-        return self.name
-    

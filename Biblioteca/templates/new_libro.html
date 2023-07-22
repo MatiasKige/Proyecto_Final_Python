@@ -6,4 +6,12 @@
 
 {% block contenido_que_cambia %}
 
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>    
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
 {% endblock %}
