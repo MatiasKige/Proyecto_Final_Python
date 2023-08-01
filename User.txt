@@ -1,1 +1,3 @@
-mati-mangekyou@hotmail.com -> admin54321
+Username = blackbeard
+Email = mati-mangekyou@hotmail.com
+Password = admin54321
