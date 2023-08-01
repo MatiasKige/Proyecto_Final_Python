@@ -17,3 +17,14 @@ def inicio(request):
     return render(request,"inicio.html",context=context)
 
 ############################################################################
+# Traer todo
+
+def archivos(request):
+    libros = Libro.objects.all()
+    peliculas = Pelicula.objects.all()
+    audios = Audio.objects.all()
+    archivos = (libros, peliculas, audios)
+    context={
+        "archivos":archivos
+    }
+    return render(request,"archivos.html",context=context)

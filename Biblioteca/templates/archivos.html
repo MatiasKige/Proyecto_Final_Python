@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Listado de archivos
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for archivo in archivos %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{archivo.name}}</h5>
+            <p class="card-text">{{archivo.info}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Genero: {{archivo.genero}}</li>
+            <li class="list-group-item">Precio: {{archivo.price}} $</li>
+            </ul>
+            <div class="card-body">
+            <a href="#" class="card-link">Abrir</a>
+            <a href="#" class="card-link">Descargar</a>
+            </div>
+        </div>
+
+    {% endfor %}
+   
+{% endblock %}
