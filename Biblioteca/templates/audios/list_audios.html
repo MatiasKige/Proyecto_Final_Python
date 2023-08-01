@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Listado de audios
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for audio in audios %}
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://lapiedradesisifo.com/wp-content/uploads/2019/07/shutterstock_1422087224.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{audio.name}}</h5>
+            <p class="card-text">{{audio.info}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Autor: {{audio.author}}</li>
+            <li class="list-group-item">Genero: {{audio.genero}}</li>
+            <li class="list-group-item">Precio: {{audio.price}} $</li>
+            </ul>
+            <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <h3> </h3>
+
+    {% endfor %}
+   
+{% endblock %}
