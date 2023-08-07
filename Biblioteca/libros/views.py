@@ -34,3 +34,14 @@ def list_libros(request):
         "libros":libros
     }
     return render(request,"libros/list_libros.html",context=context)
+
+############################################################################
+# Eliminar libros
+
+def delete_libro(request, pk):
+    if request.method == "GET":
+        libro = Libro.objects.get(pk=pk)
+        context = {"libro":libro}
+        return render(request, "libros/delete_libro.html", context=context)
+    
+############################################################################

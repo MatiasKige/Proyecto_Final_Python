@@ -37,3 +37,17 @@ def list_audios(request):
     return render(request,"audios/list_audios.html",context=context)
 
 ############################################################################
+# Eliminar audios
+
+def delete_audio(request, pk):
+    if request.method == "GET":
+        audio = Audio.objects.get(pk=pk)
+        context = {"audio":audio}
+        return render(request, "audios/delete_audio.html", context=context)
+    
+    elif request.method == "POST":
+        audio = Audio.objects.get(pk=pk)
+        audio.delete()
+        return redirect(list_audios)
+    
+############################################################################

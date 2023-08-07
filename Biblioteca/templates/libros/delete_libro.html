@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Eliminar libro
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <p>Nombre: {{libro.name}}</p>
+    <p>Informacion: {{libro.info}}</p>
+    <p>Precio: {{libro.price}}</p>
+
+    <h4>¿Seguro desea eliminar este libro?</h4>
+
+    <form action="" method="POST">
+    {% csrf_token %}
+        <p><input type="submit" value="Borrar"></p>
+    </form>
+
+{% endblock %}

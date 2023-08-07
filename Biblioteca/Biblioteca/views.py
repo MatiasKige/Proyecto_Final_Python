@@ -4,7 +4,7 @@ from audios.models import Audio
 from peliculas.models import Pelicula
 
 ############################################################################
-# INICIO
+# Index
 
 def inicio(request):
     libros = Libro.objects.all()
@@ -14,7 +14,7 @@ def inicio(request):
     context={
         "archivos":archivos
     }
-    return render(request,"inicio.html",context=context)
+    return render(request,"index.html",context=context)
 
 ############################################################################
 # Traer todo
@@ -28,3 +28,5 @@ def archivos(request):
         "archivos":archivos
     }
     return render(request,"archivos.html",context=context)
+
+############################################################################

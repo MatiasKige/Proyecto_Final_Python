@@ -3,8 +3,9 @@ from django.db import models
 class Audio(models.Model):
     name=models.CharField(max_length=50)
     author=models.CharField(max_length=50)
-    time=models.FloatField()
     genero=models.CharField(max_length=20, null=True, blank=True)
+    year=models.IntegerField()
+    time=models.FloatField()
     price=models.FloatField()
     info=models.CharField(max_length=100)
     

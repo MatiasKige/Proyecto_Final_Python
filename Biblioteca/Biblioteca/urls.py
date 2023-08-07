@@ -5,7 +5,7 @@ from Biblioteca.views import inicio, archivos
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("archivos/",archivos,name="Todo_el_contenido"),
-    path("inicio/",inicio,name="inicio"),
+    path("",inicio,name="index"),
     path("libros/",include("libros.urls")),
     path("audios/",include("audios.urls")),
     path("peliculas/",include("peliculas.urls"))

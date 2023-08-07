@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Eliminar audio
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <p>Nombre: {{audio.name}}</p>
+    <p>Informacion: {{audio.info}}</p>
+    <p>Precio: {{audio.price}}</p>
+
+    <h4>¿Seguro desea eliminar este audiolibro?</h4>
+
+    <form action="" method="POST">
+    {% csrf_token %}
+        <p><input type="submit" value="Borrar"></p>
+    </form>
+
+{% endblock %}
