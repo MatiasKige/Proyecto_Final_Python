@@ -5,21 +5,25 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
+
     {% for pelicula in object_list %}
         <div class="card" style="width: 18rem;">
             <img src="https://img.freepik.com/fotos-premium/rollo-pelicula-cinta-cine-cerca-tablilla-sobre-fondo-blanco-representacion-3d_476612-1775.jpg?w=2000" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">{{pelicula.name}}</h5>
-            <p class="card-text">{{pelicula.info}}</p>
+            <p class="card-text">{{pelicula.time}} seg.</p>
             </div>
             <ul class="list-group list-group-flush">
             <li class="list-group-item">Año: {{pelicula.year}}</li>
-            <li class="list-group-item">Duracion: {{pelicula.time}} seg.</li>
+            <li class="list-group-item">Autor: {{pelicula.author}}</li>
+            <li class="list-group-item">Genero: {{pelicula.genero}}</li>
             </ul>
             <div class="card-body">
-            <a href="/peliculas/detail-pelicula/{{pelicula.id}}" class="btn btn-primary">Detalles</a>
+                <a href="/peliculas/detail-pelicula/{{pelicula.id}}" class="btn btn-primary">Detalles</a>
+                <a href="/peliculas/delete-pelicula/{{pelicula.id}}" class="btn btn-danger">Eliminar</a>
             </div>
         </div>
         <h3> </h3>
     {% endfor %}
+    
 {% endblock %}

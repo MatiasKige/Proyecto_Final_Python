@@ -5,7 +5,7 @@ class Pelicula(models.Model):
     author = models.CharField(max_length=50, null=True, blank=True)
     genero = models.CharField(max_length=20, null=True, blank=True)
     year = models.IntegerField()
-    time = models.FloatField()
+    time = models.IntegerField()
     price = models.FloatField()
     info = models.CharField(max_length=100)
     

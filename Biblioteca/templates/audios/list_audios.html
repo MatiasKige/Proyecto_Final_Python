@@ -5,23 +5,25 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
+
     {% for audio in object_list %}
         <div class="card" style="width: 18rem;">
             <img src="https://lapiedradesisifo.com/wp-content/uploads/2019/07/shutterstock_1422087224.jpg" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">{{audio.name}}</h5>
-            <p class="card-text">{{audio.info}}</p>
+            <p class="card-text">{{audio.time}} seg.</p>
             </div>
             <ul class="list-group list-group-flush">
+                <li class="list-group-item">Año: {{audio.year}}</li>
             <li class="list-group-item">Autor: {{audio.author}}</li>
-            <li class="list-group-item">Paginas: {{audio.pages}}</li>
-            <li class="list-group-item">Precio: {{audio.price}} $</li>
+            <li class="list-group-item">Genero: {{audio.genero}}</li>
             </ul>
             <div class="card-body">
-            <a href="/audios/detail-audio/{{audio.id}}/" class="btn btn-primary">Detalles</a>
-            </div>
+                <a href="/audios/detail-audio/{{audio.id}}/" class="btn btn-primary">Detalles</a>
+                <a href="/audios/delete-audio/{{audio.id}}" class="btn btn-danger">Eliminar</a>
+            </div>          
+            </body>
         </div>
     {% endfor %}
-
 
 {% endblock %}

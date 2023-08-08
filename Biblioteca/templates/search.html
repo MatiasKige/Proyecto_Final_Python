@@ -11,16 +11,16 @@
     <img src="https://lapiedradesisifo.com/wp-content/uploads/2019/07/shutterstock_1422087224.jpg" class="card-img-top" alt="...">
     <div class="card-body">
     <h5 class="card-title">{{audio.name}}</h5>
-    <p class="card-text">{{audio.info}}</p>
+    <p class="card-text">{{audio.time}}</p>
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Autor: {{audio.author}}</li>
     <li class="list-group-item">Genero: {{audio.genero}}</li>
-    <li class="list-group-item">Precio: {{audio.price}} $</li>
+    <li class="list-group-item">Año: {{audio.year}}</li>
     </ul>
     <div class="card-body">
-    <a href="#" class="btn btn-primary">Editar</a>
-    <a href="/audios/delete-audio/{{audio.id}}" class="btn btn-danger">Eliminar</a>
+        <a href="/audios/detail-audio/{{audio.id}}/" class="btn btn-primary">Detalles</a>
+        <a href="/audios/delete-audio/{{audio.id}}" class="btn btn-danger">Eliminar</a>
     </div>
 </div>
 <h3> </h3>
@@ -32,15 +32,16 @@
     <img src="https://img.freepik.com/fotos-premium/rollo-pelicula-cinta-cine-cerca-tablilla-sobre-fondo-blanco-representacion-3d_476612-1775.jpg?w=2000" class="card-img-top" alt="...">
     <div class="card-body">
     <h5 class="card-title">{{pelicula.name}}</h5>
-    <p class="card-text">{{pelicula.info}}</p>
+    <p class="card-text">{{pelicula.time}} seg.</p>
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Año: {{pelicula.year}}</li>
-    <li class="list-group-item">Duracion: {{pelicula.time}} seg.</li>
+    <li class="list-group-item">Autor: {{pelicula.author}}</li>
+    <li class="list-group-item">Genero: {{pelicula.genero}}</li>
     </ul>
     <div class="card-body">
-    <a href="#" class="btn btn-primary">Editar</a>
-    <a href="#" class="btn btn-danger">Eliminar</a>
+        <a href="/peliculas/detail-pelicula/{{pelicula.id}}" class="btn btn-primary">Detalles</a>
+        <a href="/peliculas/delete-pelicula/{{pelicula.id}}" class="btn btn-danger">Eliminar</a>
     </div>
 </div>
 <h3> </h3>
@@ -48,22 +49,22 @@
 
 
 {% for libro in libros %}
-    <div class="card" style="width: 18rem;">
-        <img src="https://static.vecteezy.com/system/resources/previews/007/517/574/non_2x/red-closed-book-school-collection-illustration-cartoon-style-on-a-white-background-vector.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">{{libro.name}}</h5>
-        <p class="card-text">{{libro.info}}</p>
-        </div>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">Autor: {{libro.author}}</li>
-        <li class="list-group-item">Paginas: {{libro.pages}}</li>
-        <li class="list-group-item">Precio: {{libro.price}} $</li>
-        </ul>
-        <div class="card-body">
-        <a href="#" class="btn btn-primary">Editar</a>
-        <a href="/libros/delete-libro/{{libro.id}}/" class="btn btn-danger">Eliminar</a>
-        </div>
+<div class="card" style="width: 18rem;">
+    <img src="https://static.vecteezy.com/system/resources/previews/007/517/574/non_2x/red-closed-book-school-collection-illustration-cartoon-style-on-a-white-background-vector.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">{{libro.name}}</h5>
+    <p class="card-text">{{libro.pages}} pag.</p>
     </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Año: {{libro.year}}</li>
+        <li class="list-group-item">Autor: {{libro.author}}</li>
+        <li class="list-group-item">Genero: {{libro.genero}}</li>
+    </ul>
+    <div class="card-body">
+        <a href="/libros/detail-libro/{{libro.id}}/" class="btn btn-primary">Detalles</a>
+        <a href="/libros/delete-libro/{{libro.id}}/" class="btn btn-danger">Eliminar</a>
+    </div>
+</div>
 {% endfor %}
 
 {% endblock %}

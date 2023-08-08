@@ -1,4 +1,3 @@
-from django.shortcuts import render, redirect
 from peliculas.models import Pelicula
 from django.views.generic import CreateView, ListView, DetailView
 from django.views.generic.edit import DeleteView
