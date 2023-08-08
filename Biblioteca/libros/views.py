@@ -1,49 +1,36 @@
-from django.shortcuts import render, redirect
 from libros.models import Libro
-from libros.forms import Agregar_libro
+from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic.edit import DeleteView
 
 ############################################################################
-# Agregar libro con Formulario
-
-def agregar_libro(request):
-    if request.method == "POST":
-        form = Agregar_libro(request.POST)
-        if form.is_valid():
-            Libro.objects.create(
-                name = form.cleaned_data["name"],
-                author = form.cleaned_data["author"],
-                genero = form.cleaned_data["genero"],
-                year = form.cleaned_data["year"],
-                pages = form.cleaned_data["pages"],
-                price = form.cleaned_data["price"],
-                info = form.cleaned_data["info"],
-            )
-            return redirect(list_libros)
+# Agregar libros
     
-    elif request.method =="GET":
-        form = Agregar_libro()
-        context={
-            "form":form
-        }
-        return render(request,"libros/add_libro.html",context=context)
+class Create_libro(CreateView):
+    model = Libro
+    template_name = "libros/add_libro.html"
+    fields = "__all__"
+    success_url = "/libros/list-libros/"
     
 ############################################################################
 # Listado de libros
 
-def list_libros(request):
-    libros = Libro.objects.all()
-    context={
-        "libros":libros
-    }
-    return render(request,"libros/list_libros.html",context=context)
+class List_libros(ListView):
+    model = Libro
+    template_name = "libros/list_libros.html"
+
+############################################################################
+# Detalles del libro
+
+class Detail_libro(DetailView):
+    model = Libro
+    template_name = "libros/detail_libro.html"
 
 ############################################################################
 # Eliminar libros
 
-def delete_libro(request, pk):
-    if request.method == "GET":
-        libro = Libro.objects.get(pk=pk)
-        context = {"libro":libro}
-        return render(request, "libros/delete_libro.html", context=context)
+class Delete_libro(DeleteView):
+    model = Libro
+    template_name = "libros/delete_libro.html"
+    success_url = "/libros/list-libros/"
     
 ############################################################################

@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-{% if libros %}
-    {% for libro in libros %}
+    {% for libro in object_list %}
         <div class="card" style="width: 18rem;">
             <img src="https://static.vecteezy.com/system/resources/previews/007/517/574/non_2x/red-closed-book-school-collection-illustration-cartoon-style-on-a-white-background-vector.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -19,13 +18,8 @@
             <li class="list-group-item">Precio: {{libro.price}} $</li>
             </ul>
             <div class="card-body">
-            <a href="#" class="btn btn-primary">Editar</a>
-            <a href="/libros/delete-libro/{{libro.id}}/" class="btn btn-danger">Eliminar</a>
-            
+            <a href="/libros/detail-libro/{{libro.id}}/" class="btn btn-primary">Detalles</a>
             </div>
         </div>
     {% endfor %}
-{% else %}
-        <h2>No hay libros disponibles.</h2>
-{% endif %}
 {% endblock %}

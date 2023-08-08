@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Detalles del libro
+{% endblock %}
+
+{% block contenido_que_cambia %}
+    <h1>{{object.name}}</h1> 
+    <h1>{{object.author}}</h1>
+    <h1>{{object.genero}}</h1> 
+    <h1>{{object.price}}</h1>
+    <a href="/libros/delete-libro/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+{% endblock %}

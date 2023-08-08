@@ -3,4 +3,4 @@ from audios.models import Audio
 
 @admin.register(Audio)
 class Audio_admin(admin.ModelAdmin):
-    list_display = ["name","author","time","genero","price","info"]
+    list_display = ["name","author","genero","year","time","price","info"]

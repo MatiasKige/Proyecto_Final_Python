@@ -5,13 +5,7 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-
-{% if not peliculas %}
-    <h2>No hay Peliculas disponibles</h2>
-{% else %}
-
-    {% for pelicula in peliculas %}
-
+    {% for pelicula in object_list %}
         <div class="card" style="width: 18rem;">
             <img src="https://img.freepik.com/fotos-premium/rollo-pelicula-cinta-cine-cerca-tablilla-sobre-fondo-blanco-representacion-3d_476612-1775.jpg?w=2000" class="card-img-top" alt="...">
             <div class="card-body">
@@ -23,12 +17,9 @@
             <li class="list-group-item">Duracion: {{pelicula.time}} seg.</li>
             </ul>
             <div class="card-body">
-            <a href="#" class="btn btn-primary">Editar</a>
-            <a href="#" class="btn btn-danger">Eliminar</a>
+            <a href="/peliculas/detail-pelicula/{{pelicula.id}}" class="btn btn-primary">Detalles</a>
             </div>
         </div>
         <h3> </h3>
-
     {% endfor %}
-{% endif %}
 {% endblock %}

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-    Eliminar libro
+    Eliminar pelicula
 {% endblock %}
 
 {% block contenido_que_cambia %}
 
-    <p>Nombre: {{libro.name}}</p>
-    <p>Autor: {{libro.author}}</p>
-    <p>Informacion: {{libro.info}}</p>
-    <p>Precio: {{libro.price}}</p>
+    <p>Nombre: {{pelicula.name}}</p>
+    <p>Autor: {{pelicula.author}}</p>
+    <p>Informacion: {{pelicula.info}}</p>
+    <p>Precio: {{pelicula.price}}</p>
 
-    <h4>¿Seguro desea eliminar este libro?</h4>
+    <h4>¿Seguro desea eliminar esta pelicula?</h4>
 
     <form action="" method="POST">
     {% csrf_token %}

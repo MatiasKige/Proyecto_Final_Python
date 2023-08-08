@@ -1,54 +1,37 @@
 from django.shortcuts import render, redirect
 from audios.models import Audio
-from audios.forms import Agregar_audio
+from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic.edit import DeleteView
 
 ############################################################################
-# Agregar audios con formulario
+# Agregar audios
 
-def agregar_audio(request):
-    if request.method == "POST":
-        form = Agregar_audio(request.POST)
-        if form.is_valid():
-            Audio.objects.create(
-                name = form.cleaned_data["name"],
-                author = form.cleaned_data["author"],
-                genero = form.cleaned_data["genero"],
-                year = form.cleaned_data["year"],
-                time = form.cleaned_data["time"],
-                price = form.cleaned_data["price"],
-                info = form.cleaned_data["info"]
-            )
-            return redirect(list_audios)
-    
-    elif request.method =="GET":
-        form = Agregar_audio()
-        context={
-            "form":form
-        }
-        return render(request,"audios/add_audio.html",context=context)
+class Create_audio(CreateView):
+    model = Audio
+    template_name = "audios/add_audio.html"
+    fields = "__all__"
+    success_url = "/audios/list-audios/"
     
 ############################################################################
 # Listado de audios
 
-def list_audios(request):
-    audios = Audio.objects.all()
-    context={
-        "audios":audios
-    }
-    return render(request,"audios/list_audios.html",context=context)
+class List_audios(ListView):
+    model = Audio
+    template_name = "audios/list_audios.html"
 
+############################################################################
+# Detalles de audios
+
+class Detail_audio(DetailView):
+    model = Audio
+    template_name = "audios/detail_audio.html"
+    
 ############################################################################
 # Eliminar audios
 
-def delete_audio(request, pk):
-    if request.method == "GET":
-        audio = Audio.objects.get(pk=pk)
-        context = {"audio":audio}
-        return render(request, "audios/delete_audio.html", context=context)
-    
-    elif request.method == "POST":
-        audio = Audio.objects.get(pk=pk)
-        audio.delete()
-        return redirect(list_audios)
-    
+class Delete_audio(DeleteView):
+    model = Audio
+    template_name = "audios/delete_audio.html"
+    success_url = "/audios/list-audios/"
+
 ############################################################################
