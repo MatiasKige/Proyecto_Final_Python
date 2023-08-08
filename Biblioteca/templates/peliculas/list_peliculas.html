@@ -6,6 +6,10 @@
 
 {% block contenido_que_cambia %}
 
+{% if not peliculas %}
+    <h2>No hay Peliculas disponibles</h2>
+{% else %}
+
     {% for pelicula in peliculas %}
 
         <div class="card" style="width: 18rem;">
@@ -26,5 +30,5 @@
         <h3> </h3>
 
     {% endfor %}
-   
+{% endif %}
 {% endblock %}

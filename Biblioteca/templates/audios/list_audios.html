@@ -5,9 +5,8 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-
+{% if audios %}
     {% for audio in audios %}
-
         <div class="card" style="width: 18rem;">
             <img src="https://lapiedradesisifo.com/wp-content/uploads/2019/07/shutterstock_1422087224.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -25,7 +24,8 @@
             </div>
         </div>
         <h3> </h3>
-
     {% endfor %}
-   
+{% else %}
+    <h2>No hay Audiolibros disponibles</h2>
+{% endif %}
 {% endblock %}

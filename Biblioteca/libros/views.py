@@ -12,9 +12,11 @@ def agregar_libro(request):
             Libro.objects.create(
                 name = form.cleaned_data["name"],
                 author = form.cleaned_data["author"],
+                genero = form.cleaned_data["genero"],
+                year = form.cleaned_data["year"],
                 pages = form.cleaned_data["pages"],
                 price = form.cleaned_data["price"],
-                info = form.cleaned_data["info"]
+                info = form.cleaned_data["info"],
             )
             return redirect(list_libros)
     

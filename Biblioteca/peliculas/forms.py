@@ -6,5 +6,5 @@ class Agregar_pelicula(forms.Form):
     genero = forms.CharField(max_length=20)
     year = forms.IntegerField()
     time = forms.FloatField()
-    price=forms.FloatField()
-    info=forms.CharField(max_length=100)
+    price = forms.FloatField()
+    info = forms.CharField(max_length=100)

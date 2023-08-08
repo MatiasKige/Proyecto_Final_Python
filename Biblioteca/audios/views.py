@@ -12,8 +12,9 @@ def agregar_audio(request):
             Audio.objects.create(
                 name = form.cleaned_data["name"],
                 author = form.cleaned_data["author"],
-                time = form.cleaned_data["time"],
                 genero = form.cleaned_data["genero"],
+                year = form.cleaned_data["year"],
+                time = form.cleaned_data["time"],
                 price = form.cleaned_data["price"],
                 info = form.cleaned_data["info"]
             )

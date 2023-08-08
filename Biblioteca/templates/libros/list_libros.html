@@ -5,9 +5,8 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-
+{% if libros %}
     {% for libro in libros %}
-
         <div class="card" style="width: 18rem;">
             <img src="https://static.vecteezy.com/system/resources/previews/007/517/574/non_2x/red-closed-book-school-collection-illustration-cartoon-style-on-a-white-background-vector.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -25,7 +24,8 @@
             
             </div>
         </div>
-
     {% endfor %}
-   
+{% else %}
+        <h2>No hay libros disponibles.</h2>
+{% endif %}
 {% endblock %}

@@ -30,3 +30,18 @@ def archivos(request):
     return render(request,"archivos.html",context=context)
 
 ############################################################################
+# Buscador
+
+def search(request):
+    search = request.GET["search"]
+    audios = Audio.objects.filter(name__icontains=search)
+    libros = Libro.objects.filter(name__icontains=search)
+    peliculas = Pelicula.objects.filter(name__icontains=search)
+    context = {
+        "audios":audios,
+        "libros":libros,
+        "peliculas":peliculas
+        }
+    return render(request, "search.html", context=context)
+
+############################################################################
