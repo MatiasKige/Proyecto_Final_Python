@@ -1,4 +1,5 @@
 from libros.models import Libro
+from django.http import FileResponse
 from django.views.generic import CreateView, ListView, DetailView
 from django.views.generic.edit import DeleteView
 
@@ -34,3 +35,9 @@ class Delete_libro(DeleteView):
     success_url = "/libros/list-libros/"
     
 ############################################################################
+# Descargar libro
+
+def download_libro(request, id):
+    libro = Libro.objects.get(pk=id)
+    response = FileResponse(libro.file, as_attachment=True)
+    return response

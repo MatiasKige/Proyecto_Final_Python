@@ -5,9 +5,12 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-    <h1>{{object.name}}</h1> 
-    <h1>{{object.author}}</h1>
-    <h1>{{object.genero}}</h1> 
-    <h1>{{object.price}}</h1>
+    <h1>Nombre: {{object.name}}</h1> 
+    <h1>Autor: {{object.author}}</h1>
+    <h1>Genero: {{object.genero}}</h1> 
+    <h1>Año: {{object.year}}</h1>
+    <h1>Duracion: {{object.time}} seg</h1>
+    <h1>Precio: {{object.price}}$</h1>
+    <h1>Informacion: {{object.info}}</h1>
     <a href="/audios/delete-audio/{{object.id}}/" class="btn btn-danger">Eliminar</a>
 {% endblock %}

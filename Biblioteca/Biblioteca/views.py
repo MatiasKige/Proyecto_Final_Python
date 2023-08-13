@@ -45,3 +45,9 @@ def search(request):
     return render(request, "search.html", context=context)
 
 ############################################################################
+# Acerca de mi
+
+def acerca_demi(request):
+    return render(request, "acerca_demi.html",context={})
+
+############################################################################

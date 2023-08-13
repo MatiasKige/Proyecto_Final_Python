@@ -7,7 +7,8 @@ class Libro(models.Model):
     year = models.IntegerField(null=True, blank=True)
     pages = models.IntegerField()
     price = models.FloatField()
-    info = models.CharField(max_length=100)
+    info = models.CharField(max_length=1000, null=True, blank=True)
+    file = models.FileField(upload_to="media/libros/")
 
     def __str__(self):
         return self.name

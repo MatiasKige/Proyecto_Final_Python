@@ -5,13 +5,12 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-
-    <form action="" method="POST">
+    <h1>Agregar libro</h1>
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
             {{form.as_table}}
-        </table>    
-        <p><input type="submit" value="Agragar"></p>
+        </table>  
+        <button type="submit">Cargar Archivo</button>
     </form>
-
 {% endblock %}

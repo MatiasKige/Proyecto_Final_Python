@@ -8,6 +8,12 @@
     <h1>{{object.name}}</h1> 
     <h1>{{object.author}}</h1>
     <h1>{{object.genero}}</h1> 
-    <h1>{{object.price}}</h1>
+    <h1>{{object.price}}$</h1>
+    <h5>{{object.info}}</h5>
+
+    {% for libro in object_list %}
+        <li><a href="{{ libro.url }}">{{ libro.name }}</a></li>
+    {% endfor %}
+    <a href="/libros/download-libro/{{object.id}}/" class="btn btn-success" download>Descargar</a>
     <a href="/libros/delete-libro/{{object.id}}/" class="btn btn-danger">Eliminar</a>
 {% endblock %}

@@ -1,10 +1,14 @@
 from django import forms
+from libros.models import Libro
 
-class Agregar_libro(forms.Form):
-    name = forms.CharField(max_length=50)
-    author = forms.CharField(max_length=50)
-    genero = forms.CharField(max_length=20)
-    year = forms.IntegerField()
-    pages = forms.IntegerField()
-    price = forms.FloatField()
-    info = forms.CharField(max_length=100)
+class Agregar_libro(forms.ModelForm):
+    class Meta:
+        model = Libro
+        fields = ['name',"author","genero","year","pages","price","info", 'file']
+
+
+
+# Al usar class Meta en un formulario basado en un modelo, 
+# Django puede inferir automáticamente la estructura y las propiedades de los campos del formulario a partir del modelo,
+# lo que simplifica la creación y manipulación de formularios. En este caso, al utilizar ArchivoForm, 
+# Django generará los campos del formulario correspondientes a nombre y archivo basándose en el modelo Archivo.
